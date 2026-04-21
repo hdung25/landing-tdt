@@ -920,8 +920,8 @@ ul { list-style: none; }
 }
 .banner-gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 20px;
+  grid-template-columns: 1fr;
+  gap: 40px;
 }
 .banner-gallery-item {
   border-radius: var(--radius-lg);
