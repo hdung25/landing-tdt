@@ -231,7 +231,44 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // ============================================================
-  // 9. HALL OF GREATNESS SLIDER
+  // 8b. IMAGE BANNER SLIDER
+  // ============================================================
+  var imgBannerSlides = document.querySelectorAll('.img-banner-slide');
+  var imgBannerDots   = document.querySelectorAll('.img-banner-dot');
+  var imgBannerIdx    = 0;
+  var imgBannerTimer  = null;
+
+  function goImgBanner(n) {
+    imgBannerSlides[imgBannerIdx].classList.remove('active');
+    imgBannerDots[imgBannerIdx].classList.remove('active');
+    imgBannerIdx = (n + imgBannerSlides.length) % imgBannerSlides.length;
+    imgBannerSlides[imgBannerIdx].classList.add('active');
+    imgBannerDots[imgBannerIdx].classList.add('active');
+  }
+  function imgBannerAutoPlay() {
+    imgBannerTimer = setInterval(function () { goImgBanner(imgBannerIdx + 1); }, 5000);
+  }
+  imgBannerAutoPlay();
+
+  document.getElementById('img-banner-prev').addEventListener('click', function () {
+    clearInterval(imgBannerTimer);
+    goImgBanner(imgBannerIdx - 1);
+    imgBannerAutoPlay();
+  });
+  document.getElementById('img-banner-next').addEventListener('click', function () {
+    clearInterval(imgBannerTimer);
+    goImgBanner(imgBannerIdx + 1);
+    imgBannerAutoPlay();
+  });
+  imgBannerDots.forEach(function (dot) {
+    dot.addEventListener('click', function () {
+      clearInterval(imgBannerTimer);
+      goImgBanner(parseInt(this.getAttribute('data-slide'), 10));
+      imgBannerAutoPlay();
+    });
+  });
+
+
   // ============================================================
   var hallSlider = document.getElementById('hall-slider');
   var hallCards  = document.querySelectorAll('.hall-card');

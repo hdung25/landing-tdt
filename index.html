@@ -178,27 +178,35 @@
   </section>
 
   <!-- ============================================================ -->
-  <!-- SECTION: BANNER GALLERY -->
+  <!-- SECTION: BANNER GALLERY SLIDER -->
   <!-- ============================================================ -->
-  <section class="banner-gallery-section" id="banner-gallery">
-    <div class="banner-gallery-container">
-      <div class="section-header" data-aos="fade-up">
-        <span class="section-badge">Hình Ảnh Hoạt Động</span>
-        <h2 class="section-title">Khoảnh Khắc <em>Đáng Nhớ</em></h2>
+  <section class="img-banner-section" id="banner-gallery">
+    <div class="img-banner-slider-wrap">
+      <button class="img-banner-prev" id="img-banner-prev" aria-label="Banner trước">&#8592;</button>
+      <button class="img-banner-next" id="img-banner-next" aria-label="Banner tiếp">&#8594;</button>
+
+      <!-- Slide 1 -->
+      <div class="img-banner-slide active">
+        <img src="img/1.png" alt="Trồng Hạt Giống Tốt Ươm Mầm Lãnh Đạo Tương Lai" />
       </div>
-      <div class="banner-gallery-grid" data-aos="fade-up" data-aos-delay="100">
-        <div class="banner-gallery-item">
-          <img src="img/1.png" alt="Trồng Hạt Giống Tốt Ươm Mầm Lãnh Đạo Tương Lai" />
-        </div>
-        <div class="banner-gallery-item">
-          <img src="img/2.png" alt="Phát Triển Tư Duy Chinh Phục Đỉnh Cao Trí Tuệ" />
-        </div>
-        <div class="banner-gallery-item">
-          <img src="img/3.png" alt="Chơi Thông Minh Học Vui Vẻ" />
-        </div>
-        <div class="banner-gallery-item">
-          <img src="img/4.png" alt="Finding The Ideal Learning Environment" />
-        </div>
+      <!-- Slide 2 -->
+      <div class="img-banner-slide">
+        <img src="img/2.png" alt="Phát Triển Tư Duy Chinh Phục Đỉnh Cao Trí Tuệ" />
+      </div>
+      <!-- Slide 3 -->
+      <div class="img-banner-slide">
+        <img src="img/3.png" alt="Chơi Thông Minh Học Vui Vẻ" />
+      </div>
+      <!-- Slide 4 -->
+      <div class="img-banner-slide">
+        <img src="img/4.png" alt="Finding The Ideal Learning Environment" />
+      </div>
+
+      <div class="img-banner-dots" id="img-banner-dots">
+        <span class="img-banner-dot active" data-slide="0"></span>
+        <span class="img-banner-dot" data-slide="1"></span>
+        <span class="img-banner-dot" data-slide="2"></span>
+        <span class="img-banner-dot" data-slide="3"></span>
       </div>
     </div>
   </section>
