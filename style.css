@@ -476,7 +476,7 @@ ul { list-style: none; }
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(15, 60, 30, 0.75) 0%, rgba(15, 60, 30, 0.35) 100%);
+  background: linear-gradient(135deg, rgba(15, 60, 30, 0.42) 0%, rgba(15, 60, 30, 0.10) 100%);
 }
 .hero-content {
   position: absolute;
@@ -910,6 +910,38 @@ ul { list-style: none; }
 .promo-prev { left: 20px; }
 .promo-next { right: 20px; }
 .promo-prev:hover, .promo-next:hover { background: var(--green-600); border-color: var(--green-600); }
+
+/* ============================================================
+   BANNER GALLERY SECTION
+   ============================================================ */
+.banner-gallery-section {
+  padding: 60px 0;
+  background: var(--gray-50);
+}
+.banner-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+.banner-gallery-item {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  cursor: pointer;
+}
+.banner-gallery-item:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+}
+.banner-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.banner-gallery-item:hover img { transform: scale(1.03); }
 
 /* ============================================================
    NEWS SECTION
