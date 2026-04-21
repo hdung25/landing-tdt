@@ -1,5 +1,5 @@
 /* ============================================================
-   TRUNG TÂM NGOẠI NGỮ VÀ TOÁN TƯ DUY TRẺ - Main Stylesheet
+   TRUNG TÂM NGOẠI NGỮ VÀ TOÁN TƯ DUY TRẺ - Main Stylesheet (v20260422b)
    Primary: Green (#16a34a, #15803d, #166534)
    Font: Montserrat
    ============================================================ */
@@ -459,8 +459,8 @@ ul { list-style: none; }
    ============================================================ */
 .hero-section {
   position: relative;
-  height: 92vh;
-  min-height: 580px;
+  height: 75vh;
+  min-height: 500px;
   overflow: hidden;
 }
 .hero-slider { position: relative; width: 100%; height: 100%; }
@@ -477,6 +477,11 @@ ul { list-style: none; }
   position: absolute;
   inset: 0;
   background: linear-gradient(135deg, rgba(15, 60, 30, 0.42) 0%, rgba(15, 60, 30, 0.10) 100%);
+}
+.hero-overlay--light {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.05);
 }
 .hero-content {
   position: absolute;
@@ -1124,10 +1129,14 @@ ul { list-style: none; }
   grid-template-columns: 1.6fr 1fr;
   gap: 20px;
 }
-/* Hero slides – background images moved from inline styles */
+/* Hero slides – background images */
 .hero-slide--dep1  { background-image: url('img/dep1.jpg'); }
 .hero-slide--nhay1 { background-image: url('img/nhay1.jpg'); }
 .hero-slide--hoc1  { background-image: url('img/hoc1.jpg'); }
+.hero-slide--img1  { background-image: url('img/1.png'); background-position: center center; }
+.hero-slide--img2  { background-image: url('img/2.png'); background-position: center center; }
+.hero-slide--img3  { background-image: url('img/3.png'); background-position: center center; }
+.hero-slide--img4  { background-image: url('img/4.png'); background-position: center center; }
 /* Promo slides – background images moved from inline styles */
 .promo-bg--dep2   { background-image: url('img/dep2.jpg'); }
 .promo-bg--sukien1 { background-image: url('img/sukien1.jpg'); }
