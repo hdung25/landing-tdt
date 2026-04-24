@@ -247,9 +247,10 @@ ul { list-style: none; }
 .logo-wrap { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
 .logo-img {
   width: auto;
-  height: 45px;
+  height: 65px;
   object-fit: contain;
-  border-radius: var(--radius-sm);
+  border-radius: 0;
+  display: block;
 }
 .logo-text {
   display: flex;
@@ -1677,9 +1678,10 @@ ul { list-style: none; }
   margin-bottom: 16px;
 }
 .footer-logo {
-  width: 48px; height: 48px;
+  width: 70px;
+  height: 70px;
   object-fit: contain;
-  border-radius: var(--radius-sm);
+  border-radius: 0;
   filter: brightness(1.1);
 }
 .footer-logo-text {
@@ -2241,7 +2243,7 @@ ul { list-style: none; }
   .footer { padding-top: 36px; }
   .footer-title { font-size: 0.72rem; margin-bottom: 12px; }
   .footer-desc { font-size: 0.82rem; }
-  .footer-logo { width: 40px; height: 40px; }
+  .footer-logo { width: 60px; height: 60px; }
   .newsletter-input { padding: 10px 14px; font-size: 0.82rem; }
   .newsletter-btn { padding: 10px 16px; font-size: 0.78rem; }
   .footer-contact-info p { font-size: 0.78rem; }
