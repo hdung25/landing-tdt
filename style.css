@@ -468,10 +468,19 @@ ul { list-style: none; }
 .hero-slide {
   position: absolute;
   inset: 0;
-  background-size: cover;
-  background-position: center;
+  background: var(--green-dark);
   opacity: 0;
   transition: opacity 1.2s ease;
+  overflow: hidden;
+}
+.hero-slide-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
 }
 .hero-slide.active { opacity: 1; }
 .hero-overlay {
@@ -1130,14 +1139,10 @@ ul { list-style: none; }
   grid-template-columns: 1.6fr 1fr;
   gap: 20px;
 }
-/* Hero slides – background images */
+/* Hero slides – background images (legacy, kept for reference) */
 .hero-slide--dep1  { background-image: url('img/dep1.jpg'); }
 .hero-slide--nhay1 { background-image: url('img/nhay1.jpg'); }
 .hero-slide--hoc1  { background-image: url('img/hoc1.jpg'); }
-.hero-slide--img1  { background-image: url('img/1.png'); background-position: center center; }
-.hero-slide--img2  { background-image: url('img/2.png'); background-position: center center; }
-.hero-slide--img3  { background-image: url('img/3.png'); background-position: center center; }
-.hero-slide--img4  { background-image: url('img/4.png'); background-position: center center; }
 /* Promo slides – background images moved from inline styles */
 .promo-bg--dep2   { background-image: url('img/dep2.jpg'); }
 .promo-bg--sukien1 { background-image: url('img/sukien1.jpg'); }
@@ -2009,6 +2014,7 @@ ul { list-style: none; }
 
   /* Hero */
   .hero-section { height: 80vh; min-height: 500px; }
+  .hero-slide-img { object-position: center 30%; }
   .hero-title { font-size: 2rem; line-height: 1.15; }
   .hero-desc { font-size: 0.92rem; margin-bottom: 24px; }
   .hero-content { padding-bottom: 80px; }
@@ -2125,17 +2131,73 @@ ul { list-style: none; }
   .header-inner { padding-top: 10px; padding-bottom: 10px; gap: 12px; }
   .logo-img { width: 32px; height: 32px; border-radius: 50%; }
 
-  /* Hero */
-  .hero-section { height: 100svh; min-height: 560px; }
-  .hero-content { padding-bottom: 100px; }
-  .hero-title { font-size: 1.65rem; margin-bottom: 12px; }
-  .hero-desc { font-size: 0.88rem; margin-bottom: 20px; max-width: 100%; }
-  .hero-badge { font-size: 0.68rem; }
-  .hero-prev { left: 10px; }
-  .hero-next { right: 10px; }
-  .hero-prev, .hero-next { width: 38px; height: 38px; font-size: 0.9rem; }
-  .hero-dots { bottom: 28px; gap: 6px; }
+  /* Hero – Mobile: ảnh ngang rất rộng, hiển thị toàn bộ không crop
+     Dùng display:block/none thay vì opacity để tránh chiều cao bị collapse */
+  .hero-section {
+    height: auto;
+    min-height: unset;
+    overflow: visible;
+  }
+  .hero-slider {
+    position: relative;
+    height: auto;
+    overflow: visible;
+  }
+  .hero-slide {
+    position: relative;
+    height: auto;
+    opacity: 1;
+    transition: none;
+    display: none;
+  }
+  .hero-slide.active {
+    display: block;
+  }
+  .hero-slide-img {
+    position: relative;
+    width: 100%;
+    height: auto;
+    object-fit: unset;
+    object-position: unset;
+    display: block;
+  }
+  .hero-overlay,
+  .hero-overlay--light {
+    display: none;
+  }
+  .hero-content {
+    position: relative;
+    left: 0;
+    transform: none;
+    padding: 12px 0 16px;
+    background: var(--green-800);
+    width: 100%;
+    bottom: auto;
+  }
+  .hero-content .hero-ctas {
+    justify-content: center;
+  }
+  .hero-dots {
+    bottom: auto;
+    position: relative;
+    padding: 10px 0 6px;
+    background: var(--green-800);
+  }
+  .hero-prev, .hero-next {
+    position: absolute;
+    top: 30%;
+    z-index: 20;
+    background: rgba(255,255,255,0.8);
+    color: var(--green-700);
+    border-color: var(--green-200);
+  }
+  .hero-prev { left: 6px; }
+  .hero-next { right: 6px; }
+  .hero-prev, .hero-next { width: 34px; height: 34px; font-size: 0.9rem; }
+  .hero-dots { gap: 6px; }
   .hero-dot { width: 8px; height: 8px; }
+  .btn-hero-primary { padding: 12px 24px; font-size: 0.88rem; }
+  .btn-hero-video { padding: 10px 20px; font-size: 0.88rem; }
 
   /* Section spacing */
   .intro-section,
